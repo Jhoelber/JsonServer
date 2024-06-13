@@ -1,9 +1,59 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "Usuario": [
+    {
+      "id": "f7ef676e-b474-47af-a0ba-da1730dc9e28",
+      "nome": "teste novo layout",
+      "dataNascimento": "2024-05-29",
+      "telefone": "9",
+      "sexo": "feminino",
+      "senha": "9",
+      "cpf": "2345678",
+      "cep": "3232",
+      "logradouro": "dsa",
+      "numeroCasa": "4343",
+      "complemento": "dsa",
+      "bairro": "sadsad",
+      "cidade": "dasdasd",
+      "estado": "sadsada",
+      "cnpj": "2345678",
+      "email": "sdfsd@hotmail.com",
+      "": "a"
+    },
+    {
+      "id": "f03cdc60-8709-4608-b18c-52bc30ef36cc",
+      "nome": "marquin",
+      "dataNascimento": "2024-06-05",
+      "telefone": "12",
+      "sexo": "masculino",
+      "senha": "12",
+      "cpf": "123456",
+      "cep": "3",
+      "logradouro": "4",
+      "numeroCasa": "5",
+      "complemento": "6",
+      "bairro": "7",
+      "cidade": "8",
+      "estado": "9",
+      "cnpj": "2345678",
+      "email": "2@hotmail.com"
+    },
+    {
+      "id": "f50cb07a-2c8c-4939-89bc-444e45d9e5c1",
+      "nome": "jhoelber lopes pinheiro",
+      "dataNascimento": "2024-01-15",
+      "telefone": "43996619529",
+      "sexo": "masculino",
+      "senha": "123",
+      "cpf": "09666442981",
+      "cep": "86400000",
+      "logradouro": "rua jose tobias",
+      "numeroCasa": "132",
+      "complemento": "proximo a catedral",
+      "bairro": "maria angelica",
+      "cidade": "Jacarezinho",
+      "estado": "PR",
+      "cnpj": "12345678910",
+      "email": "jho.elber@hotmail.com"
+    }
+  ]
 }
