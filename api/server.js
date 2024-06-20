@@ -9,7 +9,7 @@ const db = JSON.parse(data);
 const server = jsonServer.create();
 const middlewares = jsonServer.defaults();
 const router = jsonServer.router(db); // Crie o roteador com os dados do arquivo JSON
-app.use(cors());
+server.use(cors());
 server.use(middlewares);
 server.use(jsonServer.rewriter({
     '/api/*': '/$1',
