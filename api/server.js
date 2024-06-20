@@ -12,7 +12,7 @@ const middlewares = jsonServer.defaults();
 const router = jsonServer.router(db); // Crie o roteador com os dados do arquivo JSON
 
 server.use(cors()); // Habilita o CORS para todas as origens
-
+app.use(cors());
 server.use(middlewares);
 
 server.use(jsonServer.rewriter({
