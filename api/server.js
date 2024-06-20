@@ -1,43 +1,35 @@
-const jsonServer = require('json-server');
-const fs = require('fs');
-const path = require('path');
-const cors = require('cors');
+// See https://github.com/typicode/json-server#module
+const jsonServer = require('json-server')
 
-const filePath = path.join(__dirname, 'db.json'); // Use __dirname para obter o diretório atual corretamente
-const data = fs.readFileSync(filePath, 'utf-8');
+const server = jsonServer.create()
+
+// Uncomment to allow write operations
+const fs = require('fs')
+const path = require('path')
+const filePath = path.join('db.json')
+const data = fs.readFileSync(filePath, "utf-8");
 const db = JSON.parse(data);
+const router = jsonServer.router(db)
 
-const server = jsonServer.create();
-const middlewares = jsonServer.defaults();
-const router = jsonServer.router(db); // Crie o roteador com os dados do arquivo JSON
+// Comment out to allow write operations
+const router = jsonServer.router('db.json')
 
-server.use(cors()); // Habilita o CORS para todas as origens
-app.use(cors());
-server.use(middlewares);
+const middlewares = jsonServer.defaults()
 
+server.use(middlewares)
+// Add this before server.use(router)
 server.use(jsonServer.rewriter({
-    '/api/*': '/$1',
-    '/blog/:resource/:id/show': '/:resource/:id'
-}));
-
-// Middleware para permitir operações de escrita apenas na rota '/Usuario'
-server.use('/Usuario', (req, res, next) => {
-    if (req.method === 'PUT' || req.method === 'POST' || req.method === 'DELETE') {
-        // Aqui você pode implementar lógicas de autenticação, autorização, etc.
-        // Por exemplo:
-        // if (!req.headers.authorization) {
-        //     return res.status(401).send('Unauthorized');
-        // }
-        next(); // Passa para o próximo middleware se for uma operação de escrita
-    } else {
-        res.sendStatus(404); // Responde com 404 para outros métodos não suportados
-    }
-});
-
-server.use(router);
-
+'/api/*': '/$1',
+'/blog/
+/
+/show': '/
+/
+'
+}))
+server.use(router)
 server.listen(3000, () => {
-    console.log('JSON Server is running');
-});
+console.log('JSON Server is running')
+})
 
-module.exports = server;
+// Export the Server API
+module.exports = server
