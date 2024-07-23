@@ -1,38 +1,35 @@
-const jsonServer = require('json-server');
-const fs = require('fs');
-const path = require('path');
+// See https://github.com/typicode/json-server#module
+const jsonServer = require('json-server')
 
-// Caminho absoluto para o arquivo db.json
-const filePath = path.join(__dirname, 'db.json');
+const server = jsonServer.create()
 
-// Lendo e parseando o arquivo db.json
-const data = fs.readFileSync(filePath, 'utf-8');
+// Uncomment to allow write operations
+const fs = require('fs')
+const path = require('path')
+const filePath = path.join('db.json')
+const data = fs.readFileSync(filePath, "utf-8");
 const db = JSON.parse(data);
+const router = jsonServer.router(db)
 
-// Criando uma instância do servidor json-server
-const server = jsonServer.create();
+// Comment out to allow write operations
+const router = jsonServer.router('db.json')
 
-// Middleware padrão do json-server
-const middlewares = jsonServer.defaults();
+const middlewares = jsonServer.defaults()
 
-// Adicionando middlewares ao servidor
-server.use(middlewares);
-
-// Roteamento com o arquivo db.json
-const router = jsonServer.router(db);
-server.use(router);
-
-// Adicionando rewriter para personalizar rotas
+server.use(middlewares)
+// Add this before server.use(router)
 server.use(jsonServer.rewriter({
-  '/api/*': '/$1',
-  '/blog/:resource/:id/show': '/:resource/:id/show'
-}));
+'/api/*': '/$1',
+'/blog/
+/
+/show': '/
+/
+'
+}))
+server.use(router)
+server.listen(3000, () => {
+console.log('JSON Server is running')
+})
 
-// Definindo porta para o servidor escutar
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-  console.log(`JSON Server is running on port ${PORT}`);
-});
-
-// Exportando o servidor para uso externo
-module.exports = server;
+// Export the Server API
+module.exports = server
