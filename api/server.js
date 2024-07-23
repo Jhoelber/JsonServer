@@ -1,38 +1,24 @@
-const jsonServer = require('json-server');
-const fs = require('fs');
-const path = require('path');
-
-// Caminho absoluto para o arquivo db.json
-const filePath = path.join(__dirname, 'db.json');
-
-// Lendo e parseando o arquivo db.json
-const data = fs.readFileSync(filePath, 'utf-8');
-const db = JSON.parse(data);
-
-// Criando uma instância do servidor json-server
+// JSON Server module
+const jsonServer = require("json-server");
 const server = jsonServer.create();
+const router = jsonServer.router("db.json");
 
-// Middleware padrão do json-server
+// Make sure to use the default middleware
 const middlewares = jsonServer.defaults();
 
-// Adicionando middlewares ao servidor
 server.use(middlewares);
-
-// Roteamento com o arquivo db.json
-const router = jsonServer.router(db); // Use db, não 'db.json'
+// Add this before server.use(router)
+server.use(
+ // Add custom route here if needed
+ jsonServer.rewriter({
+  "/*": "/$1",
+ })
+);
 server.use(router);
-
-// Adicionando rewriter para personalizar rotas
-server.use(jsonServer.rewriter({
-  '/api/*': '/$1',
-  '/blog/:resource/:id/show': '/:resource/:id/show'
-}));
-
-// Definindo porta para o servidor escutar
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-  console.log(`JSON Server is running on port ${PORT}`);
+// Listen to port
+server.listen(3000, () => {
+ console.log("JSON Server is running");
 });
 
-// Exportando o servidor para uso externo
+// Export the Server API
 module.exports = server;
