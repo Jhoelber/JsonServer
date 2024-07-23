@@ -1,25 +1,6 @@
 {
   "Usuario": [
-    {
-      "id": "f7ef676e-b474-47af-a0ba-da1730dc9e28",
-      "nome": "teste novo layout",
-      "dataNascimento": "2024-05-29",
-      "telefone": "9",
-      "sexo": "feminino",
-      "senha": "9",
-      "cpf": "2345678",
-      "cep": "3232",
-      "logradouro": "dsa",
-      "numeroCasa": "4343",
-      "complemento": "dsa",
-      "bairro": "sadsad",
-      "cidade": "dasdasd",
-      "estado": "sadsada",
-      "cnpj": "2345678",
-      "email": "sdfsd@hotmail.com",
-      "": "a"
-    },
-    {
+       {
       "id": "f03cdc60-8709-4608-b18c-52bc30ef36cc",
       "nome": "marquin",
       "dataNascimento": "2024-06-05",
