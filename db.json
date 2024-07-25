@@ -4,10 +4,10 @@
       "id": "dcfe801e-012f-4d5f-838e-6b923177252d",
       "nome": "testando",
       "dataNascimento": "2024-07-04",
-      "telefone": "43996619529",
+      "telefone": "123456789",
       "sexo": "feminino",
       "senha": "3",
-      "cpf": "09666442981",
+      "cpf": "123456789",
       "cnpj": "12345678912345",
       "cep": "86400-000",
       "logradouro": "3",
@@ -16,7 +16,7 @@
       "bairro": "3",
       "cidade": "Jacarezinho",
       "estado": "PR",
-      "email": "jho.elber@hotmail.com"
+      "email": "12345@hotmail.com"
     }
   ]
 }
